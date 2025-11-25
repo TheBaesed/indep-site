@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -282,6 +281,88 @@
             color: white;
         }
 
+        /* Evolution Showcase */
+        .evolution-showcase {
+            margin-top: 60px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 24px;
+            padding: 60px 40px;
+        }
+
+        .evolution-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .evolution-header h3 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: white;
+        }
+
+        .evolution-header p {
+            font-size: 16px;
+            opacity: 0.7;
+            color: white;
+        }
+
+        .evolution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 30px;
+        }
+
+        .evolution-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .evolution-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--teal);
+            box-shadow: 0 10px 30px rgba(26, 127, 127, 0.3);
+        }
+
+        .evolution-image-container {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 16px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(26, 127, 127, 0.2) 0%, rgba(255, 140, 66, 0.2) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .evolution-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .evolution-stage-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--orange);
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .evolution-days-label {
+            font-size: 13px;
+            opacity: 0.7;
+            color: white;
+        }
+
         /* Redeemers Gallery */
         .redeemers-gallery {
             display: grid;
@@ -352,51 +433,21 @@
             letter-spacing: 1px;
         }
 
-        /* Evolution Timeline */
-        .evolution-timeline {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 20px;
-            margin-top: 60px;
-        }
-
-        .evolution-stage {
-            text-align: center;
-            padding: 20px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .evolution-stage:hover {
-            background: rgba(255,255,255,0.1);
-            transform: translateY(-5px);
-        }
-
-        .evolution-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 12px;
-            border-radius: 50%;
+        /* Mystery Badge */
+        .mystery-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
             background: linear-gradient(135deg, var(--teal) 0%, var(--orange) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 36px;
-        }
-
-        .evolution-label {
-            font-size: 14px;
-            font-weight: 600;
             color: white;
-            margin-bottom: 4px;
-        }
-
-        .evolution-days {
-            font-size: 12px;
-            opacity: 0.7;
-            color: white;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
         /* Stats Bar */
@@ -457,18 +508,23 @@
                 gap: 20px;
             }
 
+            .evolution-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
             .redeemers-gallery {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
 
-            .evolution-timeline {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
             .stats-bar {
                 grid-template-columns: 1fr;
                 gap: 30px;
+            }
+
+            .evolution-showcase {
+                padding: 40px 20px;
             }
         }
 
@@ -575,7 +631,7 @@
             <div class="ranks-showcase">
                 <div class="rank-card">
                     <div class="rank-badge">
-                        <img src="https://lzkkwkivfzfbyhxwbwvd.supabase.co/storage/v1/object/public/rank/1day-noBG-Bronze.png" alt="Bronze Rank">
+                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/rank/1day-noBG-Bronze.png" alt="Bronze Rank">
                     </div>
                     <div class="rank-name">Bronze</div>
                     <div class="rank-requirement">1 Day Clean</div>
@@ -583,7 +639,7 @@
 
                 <div class="rank-card">
                     <div class="rank-badge">
-                        <img src="https://lzkkwkivfzfbyhxwbwvd.supabase.co/storage/v1/object/public/rank/1month-noBG-Silver.png" alt="Silver Rank">
+                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/rank/1month-noBG-Silver.png" alt="Silver Rank">
                     </div>
                     <div class="rank-name">Silver</div>
                     <div class="rank-requirement">30 Days Clean</div>
@@ -591,7 +647,7 @@
 
                 <div class="rank-card">
                     <div class="rank-badge">
-                        <img src="https://lzkkwkivfzfbyhxwbwvd.supabase.co/storage/v1/object/public/rank/3months-noBG-Gold.png" alt="Gold Rank">
+                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/rank/3months-noBG-Gold.png" alt="Gold Rank">
                     </div>
                     <div class="rank-name">Gold</div>
                     <div class="rank-requirement">90 Days Clean</div>
@@ -599,7 +655,7 @@
 
                 <div class="rank-card">
                     <div class="rank-badge">
-                        <img src="https://lzkkwkivfzfbyhxwbwvd.supabase.co/storage/v1/object/public/rank/6months-noBG-Plat.png" alt="Platinum Rank">
+                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/rank/6months-noBG-Plat.png" alt="Platinum Rank">
                     </div>
                     <div class="rank-name">Platinum</div>
                     <div class="rank-requirement">180 Days Clean</div>
@@ -607,7 +663,7 @@
 
                 <div class="rank-card">
                     <div class="rank-badge">
-                        <img src="https://lzkkwkivfzfbyhxwbwvd.supabase.co/storage/v1/object/public/rank/9months-noBG-Diamond.png" alt="Diamond Rank">
+                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/rank/9months-noBG-Diamond.png" alt="Diamond Rank">
                     </div>
                     <div class="rank-name">Diamond</div>
                     <div class="rank-requirement">9 Months Clean</div>
@@ -615,7 +671,7 @@
 
                 <div class="rank-card">
                     <div class="rank-badge">
-                        <img src="https://lzkkwkivfzfbyhxwbwvd.supabase.co/storage/v1/object/public/rank/1year-noBG-Masters.png" alt="Master Rank">
+                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/rank/1year-noBG-Masters.png" alt="Master Rank">
                     </div>
                     <div class="rank-name">Master</div>
                     <div class="rank-requirement">1 Year Clean</div>
@@ -623,7 +679,7 @@
 
                 <div class="rank-card">
                     <div class="rank-badge">
-                        <img src="https://lzkkwkivfzfbyhxwbwvd.supabase.co/storage/v1/object/public/rank/2years-noBG-GrandMasters.png" alt="Grandmaster Rank">
+                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/rank/2years-noBG-GrandMasters.png" alt="Grandmaster Rank">
                     </div>
                     <div class="rank-name">Grandmaster</div>
                     <div class="rank-requirement">2 Years Clean</div>
@@ -632,16 +688,86 @@
         </div>
     </section>
 
+    <!-- Evolution Showcase Section -->
+    <section class="section-dark" style="padding-top: 0;">
+        <div class="container">
+            <div class="evolution-showcase">
+                <div class="evolution-header">
+                    <h3>Your Redeemer Evolves With You</h3>
+                    <p>Here's Boozy's complete evolution journey. Your redeemer will transform just like this.</p>
+                </div>
+
+                <div class="evolution-grid">
+                    <div class="evolution-item">
+                        <div class="evolution-image-container">
+                            <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/base/BoozyBasic.webp" alt="Boozy Day 1">
+                        </div>
+                        <div class="evolution-stage-label">Day 1</div>
+                        <div class="evolution-days-label">Starting Point</div>
+                    </div>
+
+                    <div class="evolution-item">
+                        <div class="evolution-image-container">
+                            <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/evolutions/Boozy30" alt="Boozy 30 Days">
+                        </div>
+                        <div class="evolution-stage-label">30 Days</div>
+                        <div class="evolution-days-label">Silver Rank</div>
+                    </div>
+
+                    <div class="evolution-item">
+                        <div class="evolution-image-container">
+                            <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/evolutions/Boozy90" alt="Boozy 90 Days">
+                        </div>
+                        <div class="evolution-stage-label">90 Days</div>
+                        <div class="evolution-days-label">Gold Rank</div>
+                    </div>
+
+                    <div class="evolution-item">
+                        <div class="evolution-image-container">
+                            <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/evolutions/Boozy180" alt="Boozy 180 Days">
+                        </div>
+                        <div class="evolution-stage-label">180 Days</div>
+                        <div class="evolution-days-label">Platinum Rank</div>
+                    </div>
+
+                    <div class="evolution-item">
+                        <div class="evolution-image-container">
+                            <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/evolutions/Boozy270" alt="Boozy 9 Months">
+                        </div>
+                        <div class="evolution-stage-label">9 Months</div>
+                        <div class="evolution-days-label">Diamond Rank</div>
+                    </div>
+
+                    <div class="evolution-item">
+                        <div class="evolution-image-container">
+                            <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/evolutions/Boozy365" alt="Boozy 1 Year">
+                        </div>
+                        <div class="evolution-stage-label">1 Year</div>
+                        <div class="evolution-days-label">Master Rank</div>
+                    </div>
+
+                    <div class="evolution-item">
+                        <div class="evolution-image-container">
+                            <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/evolutions/Boozy730" alt="Boozy 2 Years">
+                        </div>
+                        <div class="evolution-stage-label">2 Years</div>
+                        <div class="evolution-days-label">Grandmaster</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Redeemers Section -->
     <section class="section-light">
         <div class="container">
-            <h2 class="section-title">Meet Your Redeemer</h2>
-            <p class="section-subtitle">Choose from 9 unique companions, each representing a different recovery journey</p>
+            <h2 class="section-title">Choose Your Companion</h2>
+            <p class="section-subtitle">9 unique redeemers, each with their own evolution journey. Which will you choose?</p>
 
             <div class="redeemers-gallery">
                 <div class="redeemer-card">
                     <div class="redeemer-image-container">
-                        <img src="https://lzkkwkivfzfbyhxwbwvd.supabase.co/storage/v1/object/public/base/BoozyBasic.webp" alt="Boozy" class="redeemer-image">
+                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/base/BoozyBasic.webp" alt="Boozy" class="redeemer-image">
                     </div>
                     <div class="redeemer-info">
                         <div class="redeemer-name">Boozy</div>
@@ -651,7 +777,8 @@
 
                 <div class="redeemer-card">
                     <div class="redeemer-image-container">
-                        <img src="https://lzkkwkivfzfbyhxwbwvd.supabase.co/storage/v1/object/public/base/SmokeyBasic.webp" alt="Smokey" class="redeemer-image">
+                        <div class="mystery-badge">Discover</div>
+                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/base/SmokeyBasic.webp" alt="Smokey" class="redeemer-image">
                     </div>
                     <div class="redeemer-info">
                         <div class="redeemer-name">Smokey</div>
@@ -661,7 +788,8 @@
 
                 <div class="redeemer-card">
                     <div class="redeemer-image-container">
-                        <img src="https://lzkkwkivfzfbyhxwbwvd.supabase.co/storage/v1/object/public/base/PainsyBasic.webp" alt="Painsy" class="redeemer-image">
+                        <div class="mystery-badge">Discover</div>
+                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/base/PainsyBasic.webp" alt="Painsy" class="redeemer-image">
                     </div>
                     <div class="redeemer-info">
                         <div class="redeemer-name">Painsy</div>
@@ -671,7 +799,8 @@
 
                 <div class="redeemer-card">
                     <div class="redeemer-image-container">
-                        <img src="https://lzkkwkivfzfbyhxwbwvd.supabase.co/storage/v1/object/public/base/GeekyBasic.webp" alt="Geeky" class="redeemer-image">
+                        <div class="mystery-badge">Discover</div>
+                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/base/GeekyBasic.webp" alt="Geeky" class="redeemer-image">
                     </div>
                     <div class="redeemer-info">
                         <div class="redeemer-name">Geeky</div>
@@ -681,7 +810,8 @@
 
                 <div class="redeemer-card">
                     <div class="redeemer-image-container">
-                        <img src="https://lzkkwkivfzfbyhxwbwvd.supabase.co/storage/v1/object/public/base/Chilly.png" alt="Chilly" class="redeemer-image">
+                        <div class="mystery-badge">Discover</div>
+                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/base/Chilly.png" alt="Chilly" class="redeemer-image">
                     </div>
                     <div class="redeemer-info">
                         <div class="redeemer-name">Chilly</div>
@@ -691,7 +821,8 @@
 
                 <div class="redeemer-card">
                     <div class="redeemer-image-container">
-                        <img src="https://lzkkwkivfzfbyhxwbwvd.supabase.co/storage/v1/object/public/base/GlammyBasic.webp" alt="Glammy" class="redeemer-image">
+                        <div class="mystery-badge">Discover</div>
+                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/base/GlammyBasic.webp" alt="Glammy" class="redeemer-image">
                     </div>
                     <div class="redeemer-info">
                         <div class="redeemer-name">Glammy</div>
@@ -701,7 +832,8 @@
 
                 <div class="redeemer-card">
                     <div class="redeemer-image-container">
-                        <img src="https://lzkkwkivfzfbyhxwbwvd.supabase.co/storage/v1/object/public/base/PuffyBasic.jpg" alt="Puffy" class="redeemer-image">
+                        <div class="mystery-badge">Discover</div>
+                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/base/PuffyBasic.jpg" alt="Puffy" class="redeemer-image">
                     </div>
                     <div class="redeemer-info">
                         <div class="redeemer-name">Puffy</div>
@@ -711,7 +843,8 @@
 
                 <div class="redeemer-card">
                     <div class="redeemer-image-container">
-                        <img src="https://lzkkwkivfzfbyhxwbwvd.supabase.co/storage/v1/object/public/base/IgniterBasic.webp" alt="Igniter" class="redeemer-image">
+                        <div class="mystery-badge">Discover</div>
+                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/base/IgniterBasic.webp" alt="Igniter" class="redeemer-image">
                     </div>
                     <div class="redeemer-info">
                         <div class="redeemer-name">Igniter</div>
@@ -721,7 +854,8 @@
 
                 <div class="redeemer-card">
                     <div class="redeemer-image-container">
-                        <img src="https://lzkkwkivfzfbyhxwbwvd.supabase.co/storage/v1/object/public/base/CoinerBase.webp" alt="Coiner" class="redeemer-image">
+                        <div class="mystery-badge">Discover</div>
+                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/base/CoinerBase.webp" alt="Coiner" class="redeemer-image">
                     </div>
                     <div class="redeemer-info">
                         <div class="redeemer-name">Coiner</div>
@@ -732,63 +866,11 @@
         </div>
     </section>
 
-    <!-- Evolution Section -->
-    <section class="section-dark">
-        <div class="container">
-            <h2 class="section-title">Watch Them Evolve</h2>
-            <p class="section-subtitle">Your redeemer grows with you through 7 distinct evolution stages</p>
-
-            <div class="evolution-timeline">
-                <div class="evolution-stage">
-                    <div class="evolution-icon">🌱</div>
-                    <div class="evolution-label">Stage 1</div>
-                    <div class="evolution-days">Day 1</div>
-                </div>
-
-                <div class="evolution-stage">
-                    <div class="evolution-icon">🌿</div>
-                    <div class="evolution-label">Stage 2</div>
-                    <div class="evolution-days">30 Days</div>
-                </div>
-
-                <div class="evolution-stage">
-                    <div class="evolution-icon">🌳</div>
-                    <div class="evolution-label">Stage 3</div>
-                    <div class="evolution-days">90 Days</div>
-                </div>
-
-                <div class="evolution-stage">
-                    <div class="evolution-icon">🦋</div>
-                    <div class="evolution-label">Stage 4</div>
-                    <div class="evolution-days">180 Days</div>
-                </div>
-
-                <div class="evolution-stage">
-                    <div class="evolution-icon">💎</div>
-                    <div class="evolution-label">Stage 5</div>
-                    <div class="evolution-days">9 Months</div>
-                </div>
-
-                <div class="evolution-stage">
-                    <div class="evolution-icon">⭐</div>
-                    <div class="evolution-label">Stage 6</div>
-                    <div class="evolution-days">1 Year</div>
-                </div>
-
-                <div class="evolution-stage">
-                    <div class="evolution-icon">🏆</div>
-                    <div class="evolution-label">Stage 7</div>
-                    <div class="evolution-days">2 Years</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Final CTA -->
     <section class="section-gradient">
         <div class="container" style="text-align: center;">
             <h2 class="section-title">Begin Your Transformation</h2>
-            <p class="section-subtitle">Join thousands taking control of their wellness journey</p>
+            <p class="section-subtitle">Download now and discover your redeemer's complete evolution</p>
             <a href="https://apps.apple.com/app/id6754894845" class="cta-button">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
