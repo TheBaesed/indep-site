@@ -3,24 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>(in)Dependence - Your Wellness Companion</title>
-    <meta name="description" content="AI-powered wellness companion for recovery journeys. Track progress, earn rank badges, and watch your redeemer evolve.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>INDEP - Break Free from Addiction</title>
     <style>
-        :root {
-            --teal: #1A7F7F;
-            --teal-dark: #0d4d4d;
-            --orange: #ff8c42;
-            --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
-            --gray-200: #e5e7eb;
-            --gray-300: #d1d5db;
-            --gray-800: #1f2937;
-            --gray-900: #111827;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -28,864 +12,350 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background: #ffffff;
+            color: #000000;
             line-height: 1.6;
-            color: var(--gray-900);
-            background: #0a0a0a;
-            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 40px;
         }
 
         /* Hero Section */
         .hero {
-            position: relative;
             min-height: 100vh;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 50%, #000 100%);
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(circle at 20% 50%, rgba(26, 127, 127, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 140, 66, 0.2) 0%, transparent 50%);
-            animation: pulse 8s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 0.8; }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
+            align-items: center;
             text-align: center;
-            padding: 0 20px;
-            max-width: 900px;
+            padding: 120px 40px;
         }
 
-        .logo-container {
-            margin-bottom: 40px;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .logo {
-            width: 140px;
-            height: 140px;
-            border-radius: 32px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 80px rgba(26, 127, 127, 0.3);
-            margin: 0 auto;
-            display: block;
-            border: 3px solid rgba(255,255,255,0.1);
+        .status-badge {
+            display: inline-block;
+            background: #000000;
+            color: #ffffff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 60px;
+            letter-spacing: 0.5px;
         }
 
         h1 {
-            font-size: clamp(48px, 8vw, 72px);
-            font-weight: 800;
-            margin-bottom: 20px;
-            letter-spacing: -2px;
-            color: white;
-            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+            font-size: 96px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 40px;
+            line-height: 1.1;
         }
 
-        .tagline {
-            font-size: clamp(18px, 3vw, 24px);
-            margin-bottom: 50px;
-            color: rgba(255,255,255,0.9);
-            font-weight: 300;
-            letter-spacing: 0.5px;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: white;
-            color: var(--teal);
-            padding: 20px 50px;
-            border-radius: 16px;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 700;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            letter-spacing: 0.5px;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.5);
-            background: var(--gray-50);
-        }
-
-        .cta-button svg {
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-        }
-
-        /* Section Styles */
-        section {
-            position: relative;
-            padding: 120px 20px;
-        }
-
-        .section-dark {
-            background: var(--gray-900);
-            color: white;
-        }
-
-        .section-light {
-            background: white;
-            color: var(--gray-900);
-        }
-
-        .section-gradient {
-            background: linear-gradient(135deg, var(--teal) 0%, var(--orange) 100%);
-            color: white;
-        }
-
-        .container {
-            max-width: 1200px;
+        .hero-subhead {
+            font-size: 28px;
+            font-weight: 400;
+            color: #6e6e73;
+            max-width: 720px;
             margin: 0 auto;
+            line-height: 1.4;
         }
 
-        .section-title {
-            font-size: clamp(36px, 5vw, 56px);
-            font-weight: 800;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-            text-align: center;
+        /* Features Section */
+        .features {
+            padding: 160px 40px;
         }
 
-        .section-subtitle {
-            font-size: clamp(16px, 2vw, 20px);
-            margin-bottom: 80px;
-            opacity: 0.8;
-            text-align: center;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 300;
-        }
-
-        /* Features Grid */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 80px;
+            margin-top: 120px;
         }
 
-        .feature-card {
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 24px;
-            padding: 40px;
-            transition: all 0.3s ease;
+        .feature {
+            text-align: center;
         }
 
-        .section-light .feature-card {
-            background: var(--gray-50);
-            border: 1px solid var(--gray-200);
+        .feature-image {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-        }
-
-        .feature-icon {
-            font-size: 56px;
-            margin-bottom: 24px;
+        .feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
             display: block;
         }
 
-        .feature-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: inherit;
-        }
-
-        .feature-description {
-            font-size: 16px;
-            opacity: 0.8;
-            line-height: 1.7;
-        }
-
-        /* Ranks Section */
-        .ranks-showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .rank-card {
-            text-align: center;
-            padding: 30px 20px;
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .rank-card:hover {
-            transform: scale(1.05);
-            border-color: var(--orange);
-            box-shadow: 0 10px 40px rgba(255, 140, 66, 0.3);
-        }
-
-        .rank-badge {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            border: 2px solid rgba(255,255,255,0.2);
-        }
-
-        .rank-badge img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .rank-name {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: white;
-        }
-
-        .rank-requirement {
-            font-size: 14px;
-            opacity: 0.7;
-            color: white;
-        }
-
-        /* Evolution Showcase */
-        .evolution-showcase {
-            margin-top: 60px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 24px;
-            padding: 60px 40px;
-        }
-
-        .evolution-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .evolution-header h3 {
+        .feature h3 {
             font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: white;
-        }
-
-        .evolution-header p {
-            font-size: 16px;
-            opacity: 0.7;
-            color: white;
-        }
-
-        .evolution-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 30px;
-        }
-
-        .evolution-item {
-            text-align: center;
-            padding: 20px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .evolution-item:hover {
-            transform: translateY(-5px);
-            border-color: var(--teal);
-            box-shadow: 0 10px 30px rgba(26, 127, 127, 0.3);
-        }
-
-        .evolution-image-container {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 16px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, rgba(26, 127, 127, 0.2) 0%, rgba(255, 140, 66, 0.2) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            border: 2px solid rgba(255,255,255,0.2);
-        }
-
-        .evolution-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .evolution-stage-label {
-            font-size: 14px;
             font-weight: 600;
-            color: var(--orange);
-            margin-bottom: 4px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
         }
 
-        .evolution-days-label {
-            font-size: 13px;
-            opacity: 0.7;
-            color: white;
+        .feature p {
+            font-size: 19px;
+            color: #6e6e73;
+            line-height: 1.5;
         }
 
-        /* Redeemers Gallery */
-        .redeemers-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+        /* How It Works */
+        .how-it-works {
+            padding: 160px 40px;
+            background: #f5f5f7;
         }
 
-        .redeemer-card {
-            background: white;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .redeemer-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-        }
-
-        .redeemer-image-container {
-            width: 100%;
-            aspect-ratio: 1;
-            background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .redeemer-image-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at center, rgba(26, 127, 127, 0.1) 0%, transparent 70%);
-        }
-
-        .redeemer-image {
-            width: 80%;
-            height: 80%;
-            object-fit: contain;
-            position: relative;
-            z-index: 1;
-        }
-
-        .redeemer-info {
-            padding: 24px;
-            text-align: center;
-        }
-
-        .redeemer-name {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--gray-900);
-        }
-
-        .redeemer-type {
-            font-size: 14px;
-            color: var(--teal);
+        .section-title {
+            font-size: 72px;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Mystery Badge */
-        .mystery-badge {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            background: linear-gradient(135deg, var(--teal) 0%, var(--orange) 100%);
-            color: white;
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            z-index: 10;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-
-        /* Stats Bar */
-        .stats-bar {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            padding: 80px 40px;
             text-align: center;
+            margin-bottom: 120px;
+            letter-spacing: -0.02em;
         }
 
-        .stat-item {
-            padding: 20px;
+        .steps {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .stat-number {
-            font-size: 56px;
-            font-weight: 800;
-            margin-bottom: 12px;
-            background: linear-gradient(135deg, white 0%, rgba(255,255,255,0.7) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .step {
+            margin-bottom: 100px;
+            text-align: left;
         }
 
-        .stat-label {
-            font-size: 18px;
-            opacity: 0.9;
+        .step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            font-size: 17px;
+            color: #6e6e73;
+            margin-bottom: 16px;
             font-weight: 500;
-            letter-spacing: 0.5px;
+        }
+
+        .step h3 {
+            font-size: 40px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+        }
+
+        /* Pricing */
+        .pricing {
+            padding: 160px 40px;
+            text-align: center;
+        }
+
+        .pricing-text {
+            font-size: 48px;
+            font-weight: 400;
+            color: #1d1d1f;
+            margin-top: 40px;
         }
 
         /* Footer */
-        footer {
-            padding: 60px 20px;
+        .footer {
+            padding: 160px 40px 80px;
             text-align: center;
-            background: #000;
-            color: rgba(255,255,255,0.6);
-            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
-        footer p {
-            margin: 8px 0;
+        .footer-message {
+            font-size: 56px;
+            font-weight: 500;
+            line-height: 1.3;
+            letter-spacing: -0.02em;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            section {
-                padding: 80px 20px;
+            h1 {
+                font-size: 56px;
+            }
+
+            .hero-subhead {
+                font-size: 21px;
+            }
+
+            .section-title {
+                font-size: 48px;
+            }
+
+            .feature h3 {
+                font-size: 24px;
+            }
+
+            .feature p {
+                font-size: 17px;
+            }
+
+            .step h3 {
+                font-size: 28px;
+            }
+
+            .pricing-text {
+                font-size: 32px;
+            }
+
+            .footer-message {
+                font-size: 36px;
             }
 
             .features-grid {
-                grid-template-columns: 1fr;
+                gap: 60px;
             }
 
-            .ranks-showcase {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-
-            .evolution-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-
-            .redeemers-gallery {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .stats-bar {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .evolution-showcase {
-                padding: 40px 20px;
+            .feature-image {
+                width: 150px;
+                height: 150px;
             }
         }
 
-        /* Smooth Scroll */
-        html {
-            scroll-behavior: smooth;
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .hero {
+                padding: 80px 20px;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+
+            .hero-subhead {
+                font-size: 19px;
+            }
+
+            .features,
+            .how-it-works,
+            .pricing,
+            .footer {
+                padding: 80px 20px;
+            }
+
+            .section-title {
+                font-size: 36px;
+                margin-bottom: 60px;
+            }
+
+            .feature-image {
+                width: 120px;
+                height: 120px;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <div class="logo-container">
-                <img src="./icon.png" alt="(in)Dependence Logo" class="logo">
-            </div>
-            <h1>(in)Dependence</h1>
-            <p class="tagline">Your AI-powered companion for lasting recovery</p>
-            <a href="https://apps.apple.com/app/id6754894845" class="cta-button">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
-                </svg>
-                Download on App Store
-            </a>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="section-gradient">
-        <div class="container">
-            <div class="stats-bar">
-                <div class="stat-item">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">AI Support</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">7</div>
-                    <div class="stat-label">Evolution Stages</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">9</div>
-                    <div class="stat-label">Unique Redeemers</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">∞</div>
-                    <div class="stat-label">Your Potential</div>
-                </div>
-            </div>
-        </div>
+        <div class="status-badge">Level 5 • Bronze Tier</div>
+        <h1>Break Free from Addiction</h1>
+        <p class="hero-subhead">Your AI-powered recovery companion that is with you 24/7. Track progress, stay motivated, and transform your life—one day at a time.</p>
     </section>
 
     <!-- Features Section -->
-    <section class="section-dark">
+    <section class="features">
         <div class="container">
-            <h2 class="section-title">Built for Your Journey</h2>
-            <p class="section-subtitle">Everything you need to build lasting change, backed by AI and gamification</p>
-
             <div class="features-grid">
-                <div class="feature-card">
-                    <span class="feature-icon">🤖</span>
-                    <h3 class="feature-title">AI Counselor</h3>
-                    <p class="feature-description">24/7 access to personalized support and recovery advice powered by advanced AI models</p>
+                <div class="feature">
+                    <div class="feature-image">
+                        <img src="https://gytshxrfvfrmcnbpcozl.supabase.co/storage/v1/object/public/base/BoozyBasic.webp" alt="24/7 AI Support">
+                    </div>
+                    <h3>24/7 AI Support</h3>
+                    <p>Chat with your intelligent Redeemer for motivation, guidance, and accountability.</p>
                 </div>
 
-                <div class="feature-card">
-                    <span class="feature-icon">📊</span>
-                    <h3 class="feature-title">Progress Tracking</h3>
-                    <p class="feature-description">Track your days clean, earn XP, level up, and visualize your recovery journey</p>
+                <div class="feature">
+                    <div class="feature-image">
+                        <img src="https://gytshxrfvfrmcnbpcozl.supabase.co/storage/v1/object/public/evolutions/Smokey30" alt="Gamification System">
+                    </div>
+                    <h3>Gamification System</h3>
+                    <p>Visual streak counter, XP points, level-ups make recovery engaging.</p>
                 </div>
 
-                <div class="feature-card">
-                    <span class="feature-icon">🎮</span>
-                    <h3 class="feature-title">Gamified System</h3>
-                    <p class="feature-description">Complete daily tasks, unlock achievements, and maintain streaks to stay motivated</p>
+                <div class="feature">
+                    <div class="feature-image">
+                        <img src="https://gytshxrfvfrmcnbpcozl.supabase.co/storage/v1/object/public/rank/1month-noBG-Silver.png" alt="Daily Celebrations">
+                    </div>
+                    <h3>Daily Celebrations</h3>
+                    <p>Automatic celebrations every day you open the app.</p>
                 </div>
 
-                <div class="feature-card">
-                    <span class="feature-icon">🐾</span>
-                    <h3 class="feature-title">Your Redeemer</h3>
-                    <p class="feature-description">Watch your personal companion evolve through 7 stages as you progress</p>
+                <div class="feature">
+                    <div class="feature-image">
+                        <img src="https://gytshxrfvfrmcnbpcozl.supabase.co/storage/v1/object/public/base/PainsyBasic.webp" alt="Goal Setting">
+                    </div>
+                    <h3>Goal Setting</h3>
+                    <p>Set personalized recovery goals and earn XP.</p>
                 </div>
 
-                <div class="feature-card">
-                    <span class="feature-icon">📱</span>
-                    <h3 class="feature-title">Multi-Journey Support</h3>
-                    <p class="feature-description">Track multiple recovery paths with separate redeemers (premium)</p>
+                <div class="feature">
+                    <div class="feature-image">
+                        <img src="https://gytshxrfvfrmcnbpcozl.supabase.co/storage/v1/object/public/evolutions/Coiner90" alt="Companion Evolution">
+                    </div>
+                    <h3>Companion Evolution</h3>
+                    <p>Watch your Redeemer grow as you progress.</p>
                 </div>
 
-                <div class="feature-card">
-                    <span class="feature-icon">✅</span>
-                    <h3 class="feature-title">Custom Tasks</h3>
-                    <p class="feature-description">Create personalized daily tasks tailored to your recovery goals (premium)</p>
+                <div class="feature">
+                    <div class="feature-image">
+                        <img src="https://gytshxrfvfrmcnbpcozl.supabase.co/storage/v1/object/public/base/IgniterBasic.webp" alt="Private & Secure">
+                    </div>
+                    <h3>Private & Secure</h3>
+                    <p>Your recovery journey is completely private.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Ranks Section -->
-    <section class="section-dark" style="padding-top: 0;">
+    <!-- How It Works -->
+    <section class="how-it-works">
         <div class="container">
-            <h2 class="section-title">Earn Your Rank</h2>
-            <p class="section-subtitle">Progress through 7 ranks based on your clean time. Each milestone brings you closer to mastery.</p>
+            <h2 class="section-title">How It Works</h2>
 
-            <div class="ranks-showcase">
-                <div class="rank-card">
-                    <div class="rank-badge">
-                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/rank/1day-noBG-Bronze.png" alt="Bronze Rank">
-                    </div>
-                    <div class="rank-name">Bronze</div>
-                    <div class="rank-requirement">1 Day Clean</div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">Step 1</div>
+                    <h3>Download and choose your addiction type. Meet your AI Redeemer.</h3>
                 </div>
 
-                <div class="rank-card">
-                    <div class="rank-badge">
-                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/rank/1month-noBG-Silver.png" alt="Silver Rank">
-                    </div>
-                    <div class="rank-name">Silver</div>
-                    <div class="rank-requirement">30 Days Clean</div>
+                <div class="step">
+                    <div class="step-number">Step 2</div>
+                    <h3>Open daily for check-ins. Chat, complete tasks, earn rewards.</h3>
                 </div>
 
-                <div class="rank-card">
-                    <div class="rank-badge">
-                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/rank/3month-noBG-Gold.png" alt="Gold Rank">
-                    </div>
-                    <div class="rank-name">Gold</div>
-                    <div class="rank-requirement">90 Days Clean</div>
-                </div>
-
-                <div class="rank-card">
-                    <div class="rank-badge">
-                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/rank/6month-noBG-Plat.png" alt="Platinum Rank">
-                    </div>
-                    <div class="rank-name">Platinum</div>
-                    <div class="rank-requirement">180 Days Clean</div>
-                </div>
-
-                <div class="rank-card">
-                    <div class="rank-badge">
-                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/rank/9month-noBG-Diamond.png" alt="Diamond Rank">
-                    </div>
-                    <div class="rank-name">Diamond</div>
-                    <div class="rank-requirement">9 Months Clean</div>
-                </div>
-
-                <div class="rank-card">
-                    <div class="rank-badge">
-                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/rank/1year-noBG-Masters.png" alt="Master Rank">
-                    </div>
-                    <div class="rank-name">Master</div>
-                    <div class="rank-requirement">1 Year Clean</div>
-                </div>
-
-                <div class="rank-card">
-                    <div class="rank-badge">
-                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/rank/2year-noBG-GrandMasters.png" alt="Grandmaster Rank">
-                    </div>
-                    <div class="rank-name">Grandmaster</div>
-                    <div class="rank-requirement">2 Years Clean</div>
+                <div class="step">
+                    <div class="step-number">Step 3</div>
+                    <h3>Track days clean, level up, unlock evolutions. Celebrate milestones.</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Evolution Showcase Section -->
-    <section class="section-dark" style="padding-top: 0;">
-        <div class="container">
-            <div class="evolution-showcase">
-                <div class="evolution-header">
-                    <h3>Your Redeemer Evolves With You</h3>
-                    <p>Here's Boozy's complete evolution journey. Your redeemer will transform just like this.</p>
-                </div>
-
-                <div class="evolution-grid">
-                    <div class="evolution-item">
-                        <div class="evolution-image-container">
-                            <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/base/BoozyBasic.webp" alt="Boozy Day 1">
-                        </div>
-                        <div class="evolution-stage-label">Day 1</div>
-                        <div class="evolution-days-label">Starting Point</div>
-                    </div>
-
-                    <div class="evolution-item">
-                        <div class="evolution-image-container">
-                            <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/evolutions/Boozy30" alt="Boozy 30 Days">
-                        </div>
-                        <div class="evolution-stage-label">30 Days</div>
-                        <div class="evolution-days-label">Silver Rank</div>
-                    </div>
-
-                    <div class="evolution-item">
-                        <div class="evolution-image-container">
-                            <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/evolutions/Boozy90" alt="Boozy 90 Days">
-                        </div>
-                        <div class="evolution-stage-label">90 Days</div>
-                        <div class="evolution-days-label">Gold Rank</div>
-                    </div>
-
-                    <div class="evolution-item">
-                        <div class="evolution-image-container">
-                            <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/evolutions/Boozy180" alt="Boozy 180 Days">
-                        </div>
-                        <div class="evolution-stage-label">180 Days</div>
-                        <div class="evolution-days-label">Platinum Rank</div>
-                    </div>
-
-                    <div class="evolution-item">
-                        <div class="evolution-image-container">
-                            <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/evolutions/Boozy270" alt="Boozy 9 Months">
-                        </div>
-                        <div class="evolution-stage-label">9 Months</div>
-                        <div class="evolution-days-label">Diamond Rank</div>
-                    </div>
-
-                    <div class="evolution-item">
-                        <div class="evolution-image-container">
-                            <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/evolutions/Boozy365" alt="Boozy 1 Year">
-                        </div>
-                        <div class="evolution-stage-label">1 Year</div>
-                        <div class="evolution-days-label">Master Rank</div>
-                    </div>
-
-                    <div class="evolution-item">
-                        <div class="evolution-image-container">
-                            <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/evolutions/Boozy730" alt="Boozy 2 Years">
-                        </div>
-                        <div class="evolution-stage-label">2 Years</div>
-                        <div class="evolution-days-label">Grandmaster</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Redeemers Section -->
-    <section class="section-light">
-        <div class="container">
-            <h2 class="section-title">Choose Your Companion</h2>
-            <p class="section-subtitle">9 unique redeemers, each with their own evolution journey. Which will you choose?</p>
-
-            <div class="redeemers-gallery">
-                <div class="redeemer-card">
-                    <div class="redeemer-image-container">
-                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/base/BoozyBasic.webp" alt="Boozy" class="redeemer-image">
-                    </div>
-                    <div class="redeemer-info">
-                        <div class="redeemer-name">Boozy</div>
-                        <div class="redeemer-type">Alcohol</div>
-                    </div>
-                </div>
-
-                <div class="redeemer-card">
-                    <div class="redeemer-image-container">
-                        <div class="mystery-badge">Discover</div>
-                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/base/SmokeyBasic.webp" alt="Smokey" class="redeemer-image">
-                    </div>
-                    <div class="redeemer-info">
-                        <div class="redeemer-name">Smokey</div>
-                        <div class="redeemer-type">Marijuana</div>
-                    </div>
-                </div>
-
-                <div class="redeemer-card">
-                    <div class="redeemer-image-container">
-                        <div class="mystery-badge">Discover</div>
-                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/base/PainsyBasic.webp" alt="Painsy" class="redeemer-image">
-                    </div>
-                    <div class="redeemer-info">
-                        <div class="redeemer-name">Painsy</div>
-                        <div class="redeemer-type">Opioids</div>
-                    </div>
-                </div>
-
-                <div class="redeemer-card">
-                    <div class="redeemer-image-container">
-                        <div class="mystery-badge">Discover</div>
-                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/base/GeekyBasic.webp" alt="Geeky" class="redeemer-image">
-                    </div>
-                    <div class="redeemer-info">
-                        <div class="redeemer-name">Geeky</div>
-                        <div class="redeemer-type">Stimulants</div>
-                    </div>
-                </div>
-
-                <div class="redeemer-card">
-                    <div class="redeemer-image-container">
-                        <div class="mystery-badge">Discover</div>
-                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/base/Chilly.png" alt="Chilly" class="redeemer-image">
-                    </div>
-                    <div class="redeemer-info">
-                        <div class="redeemer-name">Chilly</div>
-                        <div class="redeemer-type">Benzodiazepines</div>
-                    </div>
-                </div>
-
-                <div class="redeemer-card">
-                    <div class="redeemer-image-container">
-                        <div class="mystery-badge">Discover</div>
-                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/base/GlammyBasic.webp" alt="Glammy" class="redeemer-image">
-                    </div>
-                    <div class="redeemer-info">
-                        <div class="redeemer-name">Glammy</div>
-                        <div class="redeemer-type">Social Media</div>
-                    </div>
-                </div>
-
-                <div class="redeemer-card">
-                    <div class="redeemer-image-container">
-                        <div class="mystery-badge">Discover</div>
-                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/base/PuffyBasic.jpg" alt="Puffy" class="redeemer-image">
-                    </div>
-                    <div class="redeemer-info">
-                        <div class="redeemer-name">Puffy</div>
-                        <div class="redeemer-type">Nicotine</div>
-                    </div>
-                </div>
-
-                <div class="redeemer-card">
-                    <div class="redeemer-image-container">
-                        <div class="mystery-badge">Discover</div>
-                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/base/IgniterBasic.webp" alt="Igniter" class="redeemer-image">
-                    </div>
-                    <div class="redeemer-info">
-                        <div class="redeemer-name">Igniter</div>
-                        <div class="redeemer-type">Porn/Sex</div>
-                    </div>
-                </div>
-
-                <div class="redeemer-card">
-                    <div class="redeemer-image-container">
-                        <div class="mystery-badge">Discover</div>
-                        <img src="https://xnjxhrwvdekrilsggayq.supabase.co/storage/v1/object/public/base/CoinerBase.webp" alt="Coiner" class="redeemer-image">
-                    </div>
-                    <div class="redeemer-info">
-                        <div class="redeemer-name">Coiner</div>
-                        <div class="redeemer-type">Gambling</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="section-gradient">
-        <div class="container" style="text-align: center;">
-            <h2 class="section-title">Begin Your Transformation</h2>
-            <p class="section-subtitle">Download now and discover your redeemer's complete evolution</p>
-            <a href="https://apps.apple.com/app/id6754894845" class="cta-button">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
-                </svg>
-                Download on App Store
-            </a>
-        </div>
+    <!-- Pricing -->
+    <section class="pricing">
+        <h2 class="section-title">Pricing</h2>
+        <p class="pricing-text">Start free, upgrade when you are ready</p>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 (in)Dependence by Vibecode. All rights reserved.</p>
-            <p style="margin-top: 12px; font-size: 14px; opacity: 0.5;">Version 1.0.3 • iPhone Optimized</p>
-        </div>
-    </footer>
+    <section class="footer">
+        <p class="footer-message">Recovery is hard. But you do not have to do it alone.</p>
+    </section>
 </body>
 </html>
