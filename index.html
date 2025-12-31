@@ -3,57 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0; url=https://apps.apple.com/app/id6754894845">
-    <title>Redirecting to (in)Dependence...</title>
+    <title>indep.app</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #f0fffe 0%, #e8f9f8 50%, #fafafa 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        header {
+            margin-bottom: 80px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .apps {
+            display: grid;
+            gap: 48px;
+            margin-bottom: 80px;
+        }
+
+        .app {
+            border-bottom: 1px solid #d4f1ed;
+            padding-bottom: 48px;
+        }
+
+        .app.busy-board {
+            background: linear-gradient(135deg, #d4a574 0%, #c9915d 50%, #b8804a 100%);
+            border: 4px solid #8b6f47;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(139, 111, 71, 0.3);
+            position: relative;
+        }
+
+        .app.busy-board::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(0,0,0,0.02) 80px, rgba(0,0,0,0.02) 160px);
+            border-radius: 8px;
+            pointer-events: none;
+        }
+
+        .app.busy-board h2 {
+            color: #fef3e2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive, sans-serif;
+            position: relative;
+            z-index: 1;
+        }
+
+        .app.busy-board p {
+            color: #fef3e2;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .app:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .app h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+            color: #0f766e;
+        }
+
+        .app p {
+            font-size: 1.05rem;
+            color: #444;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .app-store-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 8px rgba(20, 184, 166, 0.2);
+        }
+
+        .app-store-link:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
+        }
+
+        .coming-soon {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #ccf5f0;
+            color: #0f766e;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .busy-board .coming-soon {
+            background: #fef3e2;
+            color: #8b6f47;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        footer {
+            border-top: 1px solid #d4f1ed;
+            padding-top: 40px;
+            text-align: center;
+        }
+
+        .contact {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .contact a {
+            color: #0d9488;
+            text-decoration: none;
+            border-bottom: 1px solid #99f6e4;
+        }
+
+        .contact a:hover {
+            border-bottom-color: #0d9488;
+        }
+
+        .legal-links {
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            color: white;
+            gap: 24px;
+            font-size: 0.9rem;
         }
-        .container {
-            text-align: center;
-            padding: 2rem;
-        }
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-        }
-        a {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: white;
-            color: #667eea;
+
+        .legal-links a {
+            color: #666;
             text-decoration: none;
-            border-radius: 12px;
-            font-weight: 600;
-            transition: transform 0.2s;
+            transition: color 0.2s;
         }
-        a:hover {
-            transform: scale(1.05);
+
+        .legal-links a:hover {
+            color: #0d9488;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .app h2 {
+                font-size: 1.5rem;
+            }
+
+            .legal-links {
+                flex-direction: column;
+                gap: 12px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>(in)Dependence</h1>
-        <p>Redirecting you to the App Store...</p>
-        <a href="https://apps.apple.com/app/id6754894845">Click here if you're not redirected automatically</a>
+        <header>
+            <h1>indep.app</h1>
+            <p class="tagline">Thoughtful apps for meaningful change.</p>
+        </header>
+
+        <div class="apps">
+            <div class="app">
+                <h2>(in)Dependence</h2>
+                <p>Break free from habits that hold you back. (in)Dependence turns your journey into a companion experience, helping you build awareness and momentum one day at a time.</p>
+                <a href="https://apps.apple.com/app/in-dependence-addiction-pet-app/id6738675308" class="app-store-link">View on App Store</a>
+            </div>
+
+            <div class="app busy-board">
+                <h2>Busy Board</h2>
+                <p>An interactive sensory experience designed for young children. Busy Board brings tactile exploration and discovery to the screen, encouraging focus and fine motor development through play.</p>
+                <span class="coming-soon">Coming Soon</span>
+            </div>
+        </div>
+
+        <footer>
+            <div class="contact">
+                For support or inquiries: <a href="mailto:cttl89@gmail.com">cttl89@gmail.com</a>
+            </div>
+            <div class="legal-links">
+                <a href="/terms">Terms of Service</a>
+                <a href="/privacy">Privacy Policy</a>
+            </div>
+        </footer>
     </div>
-    <script>
-        // Instant redirect
-        window.location.href = "https://apps.apple.com/app/id6754894845";
-    </script>
 </body>
 </html>
