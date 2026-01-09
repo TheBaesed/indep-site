@@ -134,6 +134,19 @@
             box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
         }
 
+        .busy-board .app-store-link {
+            background: #fef3e2;
+            color: #8b6f47;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .busy-board .app-store-link:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
         .coming-soon {
             display: inline-block;
             padding: 12px 28px;
@@ -142,14 +155,6 @@
             border-radius: 8px;
             font-weight: 500;
             font-size: 0.95rem;
-        }
-
-        .busy-board .coming-soon {
-            background: #fef3e2;
-            color: #8b6f47;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-            position: relative;
-            z-index: 1;
         }
 
         footer {
@@ -228,7 +233,7 @@
             <div class="app busy-board">
                 <h2>Busy Board</h2>
                 <p>An interactive sensory experience designed for young children. Busy Board brings tactile exploration and discovery to the screen, encouraging focus and fine motor development through play.</p>
-                <span class="coming-soon">Coming Soon</span>
+                <a href="https://apps.apple.com/us/app/busy-board-sensory-kid-board/id6757204745" class="app-store-link">View on App Store</a>
             </div>
         </div>
 
