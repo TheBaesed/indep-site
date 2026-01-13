@@ -3,249 +3,347 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>indep.app</title>
+    <title>indep.app - Thoughtful Apps for Meaningful Change</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #1a1a1a;
-            background: linear-gradient(135deg, #f0fffe 0%, #e8f9f8 50%, #fafafa 100%);
-            min-height: 100vh;
+            color: #1d1d1f;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            overflow-x: hidden;
         }
-
-        .container {
-            max-width: 900px;
+        
+        .hero {
+            text-align: center;
+            padding: 80px 20px 60px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,242,245,0.9) 100%);
+            backdrop-filter: blur(10px);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #1d1d1f;
+            letter-spacing: -1px;
+        }
+        
+        .hero .tagline {
+            font-size: 1.5rem;
+            color: #86868b;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+        
+        .hero .mission {
+            font-size: 1.1rem;
+            color: #515154;
+            max-width: 700px;
             margin: 0 auto;
-            padding: 60px 24px;
+            line-height: 1.8;
         }
-
-        header {
+        
+        .apps-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        
+        .app-card {
             margin-bottom: 80px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
         }
-
-        h1 {
+        
+        .app-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+        
+        .app-content {
+            padding: 60px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* (in)Dependence - Teal Theme */
+        .independence {
+            background: linear-gradient(135deg, #4db8b0 0%, #3a9690 100%);
+            color: white;
+        }
+        
+        .independence::before {
+            content: '🌱';
+            position: absolute;
+            font-size: 180px;
+            opacity: 0.15;
+            right: 40px;
+            top: -20px;
+            z-index: 1;
+        }
+        
+        /* Busy Board - Wood Theme */
+        .busy-board {
+            background: linear-gradient(135deg, #d4a574 0%, #b88654 100%);
+            color: white;
+            position: relative;
+        }
+        
+        .busy-board::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                repeating-linear-gradient(90deg, rgba(139,90,43,0.03) 0px, transparent 1px, transparent 2px, rgba(139,90,43,0.03) 3px),
+                repeating-linear-gradient(0deg, rgba(139,90,43,0.03) 0px, transparent 1px, transparent 2px, rgba(139,90,43,0.03) 3px);
+            opacity: 0.5;
+            z-index: 1;
+        }
+        
+        .busy-board::after {
+            content: '🎨';
+            position: absolute;
+            font-size: 180px;
+            opacity: 0.15;
+            right: 40px;
+            top: -20px;
+            z-index: 1;
+        }
+        
+        /* Sensory Switch Wall - Light/Electric Theme */
+        .switch-wall {
+            background: linear-gradient(135deg, #2c2c2e 0%, #1c1c1e 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .switch-wall::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255,214,10,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(10,132,255,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255,69,58,0.15) 0%, transparent 50%);
+            z-index: 1;
+        }
+        
+        .switch-wall::after {
+            content: '💡';
+            position: absolute;
+            font-size: 180px;
+            opacity: 0.2;
+            right: 40px;
+            top: -20px;
+            z-index: 1;
+        }
+        
+        .app-card h2 {
             font-size: 2.5rem;
             font-weight: 600;
-            margin-bottom: 12px;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+        
+        .app-card p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+        
+        .app-store-btn {
+            display: inline-block;
+            background: rgba(255,255,255,0.95);
+            color: #1d1d1f;
+            padding: 14px 36px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .app-store-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        .coming-soon-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 14px 36px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .brand-section {
+            text-align: center;
+            padding: 80px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .brand-section h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #1d1d1f;
+        }
+        
+        .brand-section p {
+            font-size: 1.2rem;
+            color: #515154;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .specialty {
+            display: inline-block;
+            background: linear-gradient(135deg, #4db8b0 0%, #d4a574 50%, #2c2c2e 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            font-weight: 700;
+            font-size: 1.3rem;
         }
-
-        .tagline {
-            font-size: 1.1rem;
-            color: #666;
-            font-weight: 400;
-        }
-
-        .apps {
-            display: grid;
-            gap: 48px;
-            margin-bottom: 80px;
-        }
-
-        .app {
-            border-bottom: 1px solid #d4f1ed;
-            padding-bottom: 48px;
-        }
-
-        .app.busy-board {
-            background: linear-gradient(135deg, #d4a574 0%, #c9915d 50%, #b8804a 100%);
-            border: 4px solid #8b6f47;
-            border-radius: 12px;
-            padding: 32px;
-            box-shadow: 0 4px 12px rgba(139, 111, 71, 0.3);
-            position: relative;
-        }
-
-        .app.busy-board::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px),
-                repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(0,0,0,0.02) 80px, rgba(0,0,0,0.02) 160px);
-            border-radius: 8px;
-            pointer-events: none;
-        }
-
-        .app.busy-board h2 {
-            color: #fef3e2;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive, sans-serif;
-            position: relative;
-            z-index: 1;
-        }
-
-        .app.busy-board p {
-            color: #fef3e2;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-            position: relative;
-            z-index: 1;
-        }
-
-        .app:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .app h2 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            margin-bottom: 16px;
-            letter-spacing: -0.01em;
-            color: #0f766e;
-        }
-
-        .app p {
-            font-size: 1.05rem;
-            color: #444;
-            margin-bottom: 24px;
-            line-height: 1.7;
-        }
-
-        .app-store-link {
-            display: inline-flex;
-            align-items: center;
-            padding: 12px 28px;
-            background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 500;
-            transition: transform 0.2s, box-shadow 0.2s;
-            font-size: 0.95rem;
-            box-shadow: 0 2px 8px rgba(20, 184, 166, 0.2);
-        }
-
-        .app-store-link:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
-        }
-
-        .busy-board .app-store-link {
-            background: #fef3e2;
-            color: #8b6f47;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-            position: relative;
-            z-index: 1;
-        }
-
-        .busy-board .app-store-link:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-
-        .coming-soon {
-            display: inline-block;
-            padding: 12px 28px;
-            background: #ccf5f0;
-            color: #0f766e;
-            border-radius: 8px;
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-
+        
         footer {
-            border-top: 1px solid #d4f1ed;
-            padding-top: 40px;
             text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,242,245,0.9) 100%);
+            margin-top: 60px;
         }
-
-        .contact {
+        
+        .contact-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #4db8b0 0%, #3a9690 100%);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 16px rgba(77,184,176,0.3);
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(77,184,176,0.4);
+        }
+        
+        .footer-links {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .footer-links a {
+            color: #515154;
+            text-decoration: none;
+            margin: 0 20px;
             font-size: 0.95rem;
-            color: #666;
-            margin-bottom: 20px;
+            transition: color 0.2s ease;
         }
-
-        .contact a {
-            color: #0d9488;
-            text-decoration: none;
-            border-bottom: 1px solid #99f6e4;
+        
+        .footer-links a:hover {
+            color: #4db8b0;
         }
-
-        .contact a:hover {
-            border-bottom-color: #0d9488;
-        }
-
-        .legal-links {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            font-size: 0.9rem;
-        }
-
-        .legal-links a {
-            color: #666;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .legal-links a:hover {
-            color: #0d9488;
-        }
-
-        @media (max-width: 640px) {
-            .container {
-                padding: 40px 20px;
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
             }
-
-            h1 {
+            
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .app-content {
+                padding: 40px 30px;
+            }
+            
+            .app-card h2 {
                 font-size: 2rem;
             }
-
-            .app h2 {
-                font-size: 1.5rem;
+            
+            .app-card p {
+                font-size: 1.1rem;
             }
-
-            .legal-links {
-                flex-direction: column;
-                gap: 12px;
+            
+            .app-card::after,
+            .independence::before,
+            .busy-board::after,
+            .switch-wall::after {
+                font-size: 120px;
+                right: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>indep.app</h1>
-            <p class="tagline">Thoughtful apps for meaningful change.</p>
-        </header>
-
-        <div class="apps">
-            <div class="app">
+    <div class="hero">
+        <h1>indep.app</h1>
+        <p class="tagline">Thoughtful apps for meaningful change.</p>
+        <p class="mission">Creating tools that matter. No ads. No distractions. Just beautifully crafted experiences that help people grow, learn, and find calm.</p>
+    </div>
+    
+    <div class="apps-container">
+        <div class="app-card independence">
+            <div class="app-content">
                 <h2>(in)Dependence</h2>
-                <p>Break free from habits that hold you back. (in)Dependence turns your journey into a companion experience, helping you build awareness and momentum one day at a time.</p>
-                <a href="https://apps.apple.com/us/app/in-dependence-addiction-pet/id6754894845" class="app-store-link">View on App Store</a>
-            </div>
-
-            <div class="app busy-board">
-                <h2>Busy Board</h2>
-                <p>An interactive sensory experience designed for young children. Busy Board brings tactile exploration and discovery to the screen, encouraging focus and fine motor development through play.</p>
-                <a href="https://apps.apple.com/us/app/busy-board-sensory-kid-board/id6757204745" class="app-store-link">View on App Store</a>
+                <p>Break free from habits that hold you back. (in)Dependence turns your recovery journey into a companion experience, helping you build awareness and momentum one day at a time. Your path to freedom, with support every step of the way.</p>
+                <a href="https://apps.apple.com/us/app/in-dependence-addiction-pet/id6754894845" class="app-store-btn">Download on App Store</a>
             </div>
         </div>
-
-        <footer>
-            <div class="contact">
-                For support or inquiries: <a href="mailto:cttl89@gmail.com">cttl89@gmail.com</a>
+        
+        <div class="app-card busy-board">
+            <div class="app-content">
+                <h2>Busy Board</h2>
+                <p>An interactive sensory wonderland designed for young minds. Featuring switches, buttons, spinners, slime, and more—all in one calming digital space. Perfect for curious toddlers and children with autism or sensory processing needs.</p>
+                <a href="https://apps.apple.com/us/app/busy-board-sensory-kid-board/id6757204745" class="app-store-btn">Download on App Store</a>
             </div>
-            <div class="legal-links">
-                <a href="/terms">Terms of Service</a>
-                <a href="/privacy">Privacy Policy</a>
+        </div>
+        
+        <div class="app-card switch-wall">
+            <div class="app-content">
+                <h2>Sensory Switch Wall</h2>
+                <p>Pure, focused repetition for calming and self-soothing. Thirty unique light switches with realistic sounds and haptic feedback. For children who find comfort in the simple joy of flipping switches over and over again.</p>
+                <span class="coming-soon-badge">Coming Soon</span>
             </div>
-        </footer>
+        </div>
     </div>
+    
+    <div class="brand-section">
+        <h3>Our Mission</h3>
+        <p>We build apps for underserved communities—people in recovery and families with special needs children. Every app is crafted with care, free from ads and distractions, focused entirely on helping real people with real challenges.</p>
+        <p class="specialty">Specializing in sensory tools for autism and developmental needs.</p>
+    </div>
+    
+    <footer>
+        <a href="mailto:cttl89@gmail.com" class="contact-btn">Get in Touch</a>
+        <div class="footer-links">
+            <a href="/terms">Terms of Service</a>
+            <a href="/privacy">Privacy Policy</a>
+        </div>
+    </footer>
 </body>
 </html>
