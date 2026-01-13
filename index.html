@@ -148,6 +148,66 @@
             z-index: 1;
         }
         
+        /* Bible App - Rainbow/Biblical Theme */
+        .bible-app {
+            background: linear-gradient(135deg, #87CEEB 0%, #98D8C8 30%, #F7DC6F 60%, #F1948A 100%);
+            color: #2c3e50;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bible-app::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse 120% 40% at 50% -10%, rgba(255,0,0,0.15) 0%, transparent 20%),
+                radial-gradient(ellipse 120% 40% at 50% -8%, rgba(255,165,0,0.15) 0%, transparent 22%),
+                radial-gradient(ellipse 120% 40% at 50% -6%, rgba(255,255,0,0.15) 0%, transparent 24%),
+                radial-gradient(ellipse 120% 40% at 50% -4%, rgba(0,128,0,0.15) 0%, transparent 26%),
+                radial-gradient(ellipse 120% 40% at 50% -2%, rgba(0,0,255,0.12) 0%, transparent 28%),
+                radial-gradient(ellipse 120% 40% at 50% 0%, rgba(128,0,128,0.1) 0%, transparent 30%);
+            z-index: 1;
+        }
+        
+        .bible-app::after {
+            content: '🐟';
+            position: absolute;
+            font-size: 180px;
+            opacity: 0.2;
+            right: 40px;
+            top: -20px;
+            z-index: 1;
+        }
+        
+        .bible-app .ark-icon {
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.12;
+            left: 30px;
+            bottom: 10px;
+            z-index: 1;
+        }
+        
+        .bible-app .dove-icon {
+            position: absolute;
+            font-size: 80px;
+            opacity: 0.15;
+            right: 200px;
+            top: 20px;
+            z-index: 1;
+        }
+        
+        .bible-app .app-content {
+            color: #2c3e50;
+        }
+        
+        .bible-app .coming-soon-badge {
+            background: rgba(44,62,80,0.2);
+            color: #2c3e50;
+            border: 2px solid rgba(44,62,80,0.3);
+        }
+        
         .app-card h2 {
             font-size: 2.5rem;
             font-weight: 600;
@@ -292,9 +352,20 @@
             .app-card::after,
             .recovery-pet::before,
             .busy-board::after,
-            .switch-wall::after {
+            .switch-wall::after,
+            .bible-app::after {
                 font-size: 120px;
                 right: 20px;
+            }
+            
+            .bible-app .ark-icon {
+                font-size: 70px;
+                left: 15px;
+            }
+            
+            .bible-app .dove-icon {
+                font-size: 50px;
+                right: 120px;
             }
         }
     </style>
@@ -330,12 +401,22 @@
                 <span class="coming-soon-badge">Coming Soon</span>
             </div>
         </div>
+        
+        <div class="app-card bible-app">
+            <span class="ark-icon">🚢</span>
+            <span class="dove-icon">🕊️</span>
+            <div class="app-content">
+                <h2>Bible Stories for Kids</h2>
+                <p>Bring timeless Bible stories to life for little ones. Gentle, engaging tales of Noah, Jonah, David, and more—presented in a warm, child-friendly way. Perfect for bedtime devotions or quiet learning moments with your family.</p>
+                <span class="coming-soon-badge">Coming Soon</span>
+            </div>
+        </div>
     </div>
     
     <div class="brand-section">
         <h3>Our Mission</h3>
-        <p>We build apps for underserved communities—people in recovery and families with special needs children. Every app is crafted with care, free from ads and distractions, focused entirely on helping real people with real challenges.</p>
-        <p class="specialty">Specializing in sensory tools for autism and developmental needs.</p>
+        <p>We build apps for underserved communities—people in recovery, families with special needs children, and those seeking faith-based resources for their little ones. Every app is crafted with care, free from ads and distractions, focused entirely on helping real people with real challenges.</p>
+        <p class="specialty">Specializing in sensory tools for autism, developmental needs, and faith-based learning.</p>
     </div>
     
     <footer>
